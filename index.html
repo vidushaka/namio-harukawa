@@ -402,34 +402,15 @@
                 return false;
             }
             return true;
-        }
-        
-        // Add to form submit handler
-        document.getElementById('questionnaire').addEventListener('submit', function(e) {
-            // Validate services checkbox group
-            if (!validateCheckboxGroup('services', 'Please select at least one preferred schedule option.')) {
-                e.preventDefault();
-                return false;
-            }
-        });
-        
-        // File upload feedback
-        const fileInput = document.getElementById('photo');
-        const fileLabel = document.querySelector('.file-label span:last-child');
-        const originalText = fileLabel.textContent;
-
-        fileInput.addEventListener('change', function(e) {
-            if (e.target.files.length > 0) {
-                fileLabel.textContent = `Selected: ${e.target.files[0].name}`;
-                fileLabel.style.color = '#4facfe';
-            } else {
-                fileLabel.textContent = originalText;
-                fileLabel.style.color = '';
-            }
-        });
+        } 
 
         // Form submission handling
         document.getElementById('questionnaire').addEventListener('submit', function(e) {
+            // Validate services checkbox group
+            if (!validateCheckboxGroup('services', 'Please select at least one service option.')) {
+                e.preventDefault();
+                return false;
+            }
             // Note: In a real implementation, you would handle the response from Formspree
             // For demo purposes, we'll show success message after a delay
             
