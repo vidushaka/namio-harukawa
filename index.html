@@ -406,8 +406,8 @@
         
         // Add to form submit handler
         document.getElementById('questionnaire').addEventListener('submit', function(e) {
-            // Validate availability checkbox group
-            if (!validateCheckboxGroup('availability', 'Please select at least one preferred schedule option.')) {
+            // Validate services checkbox group
+            if (!validateCheckboxGroup('services', 'Please select at least one preferred schedule option.')) {
                 e.preventDefault();
                 return false;
             }
